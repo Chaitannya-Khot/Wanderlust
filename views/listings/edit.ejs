@@ -1,26 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit your listing</title>
-</head>
-<body>
-    <form action="/listings/<%= Listing._id  %>?_method=PUT" method="post">
-        <h3>Edit your listing</h3>
-        <input type="text" name="listing[title]" id="" value="<%= Listing.title %>"  type="text">
+<% layout("/layouts/boilerplate") %>
+    <form action="/listings/<%= Listing._id  %>?_method=PUT" method="post"  novalidate class="needs-validation">
+       
+    <div class="row">
+        
+        <div class="col-8 offset-2 mt-3">
+            <h3>Edit your listing</h3>
+        <div class="mb-3">
+            <label for="title" class="form-label">title</label>
+            <input type="text" name="listing[title]" id="" value="<%= Listing.title %>"  type="text" class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Cant be empty.</div>
+        </div>
+        <div class="mb-3">
+            <label for="title" class="form-label">Description</label>
+            <textarea type="text" name="listing[description]" id="" type="text" class="form-control" required><%= Listing.description %></textarea>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Cant be empty.</div>
+        </div>
+        <div class="md-3">
+            <label for="image.url" class="form-label">image filename</label>
+            <input type="text" name="listing[image.filename]" id="" value="<%= Listing.image.filename  %>" type="text" class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Cant be empty.</div>
+        </div>
+        <div class="md-3">
+            <label for="image.url" class="form-label">image url</label>
+            <input type="text" name="listing[image.url]" id="" value="<%= Listing.image.url  %>" type="text" class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Cant be empty.</div>
+        </div>
+
+    <div class="row">
+        <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input name="listing[price]" id="" value="<%= Listing.price %>" type="number" class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Cant be empty.</div>
+        </div>
+        <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" name="listing[country]" id="" value="<%= Listing.country %>" type="text" class="form-control" required> 
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Cant be empty.</div>
+        </div>
+    </div>  
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="listing[location]" id="" value="<%= Listing.location  %>" type="text" class="form-control" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Cant be empty.</div>
+        </div>
+        <button class="btn btn-dark">Edit</button>
+    </div>
+    </div>
         <br><br>
-        <textarea type="text" name="listing[description]" id="" type="text"><%= Listing.description %></textarea>
-        <br><br>
-        <input type="text" name="listing[image]" id="" value="<%= Listing.image  %>" type="text">
-        <br><br>
-        <input type="text" name="listing[price]" id="" value="<%= Listing.price %>" type="number" type="text">
-        <br><br>
-        <input type="text" name="listing[country]" id="" value="<%= Listing.country %>" type="text">
-        <br><br>
-        <input type="text" name="listing[location]" id="" value="<%= Listing.location  %>" type="text">
-        <br><br>
-        <button>Edit</button>
     </form>
-</body>
-</html>

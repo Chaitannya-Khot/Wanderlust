@@ -1,26 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="/listings" method="post">
-        <h3>Create a new listing</h3>
-        <input type="text" name="listing[title]" id="" placeholder="property title"  type="text">
-        <br><br>
-        <textarea type="text" name="listing[description]" id="" placeholder="property description" type="text"></textarea>
-        <br><br>
-        <input type="text" name="listing[image]" id="" placeholder="property image/link" type="text">
-        <br><br>
-        <input type="text" name="listing[price]" id="" placeholder="property price" type="number" type="text">
-        <br><br>
-        <input type="text" name="listing[country]" id="" placeholder="property country" type="text">
-        <br><br>
-        <input type="text" name="listing[location]" id="" placeholder="property location" type="text">
-        <br><br>
-        <button>submit</button>
-    </form>
-</body>
-</html>
+<% layout("/layouts/boilerplate") %>
+<div class="row">
+    <div class="col-8 offset-2">
+        <form action="/listings" method="post" novalidate class="needs-validation">
+            <br><br>
+            <h3>Create a New listing</h3>
+        <div>
+            <label for="title" class="form-label">title</label>
+            <input type="text" name="listing[title]" id="" placeholder="property title"  type="text" class="form-control" required >
+            <div class="valid-feedback">Looks Good!</div>
+            <div class="invalid-feedback">Title cant be empty.</div>
+         </div>
+            <br>
+        <div>
+            <label for="description" class="form-label">Description</label>
+            <textarea type="text" name="listing[description]" id="" placeholder="property description" type="text" class="form-control" required></textarea>
+            <div class="valid-feedback">Looks Good!</div>
+            <div class="invalid-feedback">Description is needed.</div>
+        </div>
+            <br>
+        <div>
+            <label for="image.url" class="form-label">image url</label>
+            <input type="text" name="listing[image.url]" id="" placeholder="property image/link" type="text" class="form-control">
+            <div class="valid-feedback">Can be empty</div>
+        </div>
+        <br>
+        <div>
+            <label for="image.title" class="form-label">image title</label>
+            <input type="text" name="listing[image.title]" id="" placeholder="property image/title" type="text" class="form-control">
+            <div class="valid-feedback">Can be empty</div>
+        </div>
+            <br>
+        <div class="row">
+            <div class="col-4">
+                <label for="price" class="form-label">price</label>
+                <input type="text" name="listing[price]" id="" placeholder="property price" type="number" type="text" class="form-control" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Free?</div>
+            </div>
+                <br>
+            <div class="col-8">
+                <label for="country" class="form-label">country</label>
+                <input type="text" name="listing[country]" id="" placeholder="property country" type="text" class="form-control" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">This place doesnt exists?</div>
+            </div>
+        </div>
+            <br>
+            <div>
+            <label for="location" class="form-label">location</label>
+            <input type="text" name="listing[location]" id="" placeholder="property location" type="text" class="form-control" required>
+            <div class="valid-feedback">Looks Good!</div>
+            <div class="invalid-feedback">This place doesnt exists?</div>
+        </div>
+            <br>
+            <button class="btn btn-dark add-btn">submit</button>
+            <br><br>
+        </form>
+    </div>
+</div>
