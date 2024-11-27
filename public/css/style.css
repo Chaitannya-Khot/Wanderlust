@@ -70,16 +70,16 @@ body {
 }
 
 /* cards */
-.card {
+.index-card {
     border: none !important;
     margin: 1rem;
 }
 
 .index-img {
-    border-radius: 1.5rem !important; 
+    border-radius: 1.3rem !important; 
     width: 100% !important;
     object-fit: cover !important;
-    height: 20rem !important;
+    height: 21rem !important;
 }
 
 .card-text p {
@@ -108,6 +108,7 @@ body {
 }
 
 
+
 .btns {
     display: flex;
 
@@ -115,4 +116,6 @@ body {
 
 .show-card {
     padding: 0;
+    border: none !important;
 }
+

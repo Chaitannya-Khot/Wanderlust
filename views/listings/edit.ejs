@@ -18,22 +18,22 @@
             <div class="invalid-feedback">Cant be empty.</div>
         </div>
         <div class="md-3">
-            <label for="image.url" class="form-label">image filename</label>
-            <input type="text" name="listing[image.filename]" id="" value="<%= Listing.image.filename  %>" type="text" class="form-control" required>
+            <label for="image[filename]" class="form-label">image filename</label>
+            <input type="text" name="listing[image][filename]" id="" value="<%= Listing.image.filename  %>" type="text" class="form-control" required>
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Cant be empty.</div>
         </div>
         <div class="md-3">
-            <label for="image.url" class="form-label">image url</label>
-            <input type="text" name="listing[image.url]" id="" value="<%= Listing.image.url  %>" type="text" class="form-control" required>
+            <label for="image[url]" class="form-label">image url</label>
+            <input type="text" name="listing[image][url]" id="" value="<%= Listing.image.url  %>" type="text" class="form-control" required>
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Cant be empty.</div>
         </div>
 
     <div class="row">
         <div class="mb-3 col-md-4">
-            <label for="price" class="form-label">Price</label>
-            <input name="listing[price]" id="" value="<%= Listing.price %>" type="number" class="form-control" required>
+            <label for="listing[price]" class="form-label">Price</label>
+            <input type="number" name="listing[price]" id="" value="<%= Listing.price %>"  class="form-control" required>
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Cant be empty.</div>
         </div>

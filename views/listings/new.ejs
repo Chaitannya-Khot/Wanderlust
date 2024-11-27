@@ -19,27 +19,27 @@
         </div>
             <br>
         <div>
-            <label for="image.url" class="form-label">image url</label>
-            <input type="text" name="listing[image.url]" id="" placeholder="property image/link" type="text" class="form-control">
+            <label for="image.filename" class="form-label">image title</label>
+            <input type="text" name="listing[image][filename]" id="" placeholder="property image/title" type="text" class="form-control">
             <div class="valid-feedback">Can be empty</div>
         </div>
         <br>
         <div>
-            <label for="image.title" class="form-label">image title</label>
-            <input type="text" name="listing[image.title]" id="" placeholder="property image/title" type="text" class="form-control">
+            <label for="image.url" class="form-label">image url</label>
+            <input type="text" name="listing[image][url]" id="" placeholder="property image/link" type="text" class="form-control">
             <div class="valid-feedback">Can be empty</div>
         </div>
             <br>
         <div class="row">
             <div class="col-4">
-                <label for="price" class="form-label">price</label>
-                <input type="text" name="listing[price]" id="" placeholder="property price" type="number" type="text" class="form-control" required>
+                <label for="listing[price]" class="form-label">price</label>
+                <input name="listing[price]" id="" placeholder="property price" type="number" class="form-control" required>
                 <div class="valid-feedback">Looks Good!</div>
                 <div class="invalid-feedback">Free?</div>
             </div>
                 <br>
             <div class="col-8">
-                <label for="country" class="form-label">country</label>
+                <label for="listing[country]" class="form-label">country</label>
                 <input type="text" name="listing[country]" id="" placeholder="property country" type="text" class="form-control" required>
                 <div class="valid-feedback">Looks Good!</div>
                 <div class="invalid-feedback">This place doesnt exists?</div>
@@ -47,7 +47,7 @@
         </div>
             <br>
             <div>
-            <label for="location" class="form-label">location</label>
+            <label for="listing[location]" class="form-label">location</label>
             <input type="text" name="listing[location]" id="" placeholder="property location" type="text" class="form-control" required>
             <div class="valid-feedback">Looks Good!</div>
             <div class="invalid-feedback">This place doesnt exists?</div>
