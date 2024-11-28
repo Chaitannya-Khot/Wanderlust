@@ -1,5 +1,5 @@
 <% layout("/layouts/boilerplate") %>
-    <form action="/listings/<%= Listing._id  %>?_method=PUT" method="post"  novalidate class="needs-validation">
+    <form action="/listings/<%= listing._id  %>?_method=PUT" method="post"  novalidate class="needs-validation">
        
     <div class="row">
         
@@ -7,25 +7,25 @@
             <h3>Edit your listing</h3>
         <div class="mb-3">
             <label for="title" class="form-label">title</label>
-            <input type="text" name="listing[title]" id="" value="<%= Listing.title %>"  type="text" class="form-control" required>
+            <input type="text" name="listing[title]" id="" value="<%= listing.title %>"  type="text" class="form-control" required>
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Cant be empty.</div>
         </div>
         <div class="mb-3">
             <label for="title" class="form-label">Description</label>
-            <textarea type="text" name="listing[description]" id="" type="text" class="form-control" required><%= Listing.description %></textarea>
+            <textarea type="text" name="listing[description]" id="" type="text" class="form-control" required><%= listing.description %></textarea>
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Cant be empty.</div>
         </div>
         <div class="md-3">
             <label for="image[filename]" class="form-label">image filename</label>
-            <input type="text" name="listing[image][filename]" id="" value="<%= Listing.image.filename  %>" type="text" class="form-control" required>
+            <input type="text" name="listing[image][filename]" id="" value="<%= listing.image.filename  %>" type="text" class="form-control">
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Cant be empty.</div>
         </div>
         <div class="md-3">
             <label for="image[url]" class="form-label">image url</label>
-            <input type="text" name="listing[image][url]" id="" value="<%= Listing.image.url  %>" type="text" class="form-control" required>
+            <input type="text" name="listing[image][url]" id="" value="<%= listing.image.url  %>" type="text" class="form-control" required>
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Cant be empty.</div>
         </div>
@@ -33,20 +33,20 @@
     <div class="row">
         <div class="mb-3 col-md-4">
             <label for="listing[price]" class="form-label">Price</label>
-            <input type="number" name="listing[price]" id="" value="<%= Listing.price %>"  class="form-control" required>
+            <input type="number" name="listing[price]" id="" value="<%= listing.price %>"  class="form-control" required>
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Cant be empty.</div>
         </div>
         <div class="mb-3 col-md-8">
             <label for="country" class="form-label">Country</label>
-            <input type="text" name="listing[country]" id="" value="<%= Listing.country %>" type="text" class="form-control" required> 
+            <input type="text" name="listing[country]" id="" value="<%= listing.country %>" type="text" class="form-control" required> 
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Cant be empty.</div>
         </div>
     </div>  
         <div class="mb-3">
             <label for="location" class="form-label">Location</label>
-            <input type="text" name="listing[location]" id="" value="<%= Listing.location  %>" type="text" class="form-control" required>
+            <input type="text" name="listing[location]" id="" value="<%= listing.location  %>" type="text" class="form-control" required>
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Cant be empty.</div>
         </div>
