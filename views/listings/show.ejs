@@ -98,7 +98,7 @@
                                                     <%= review.comment %>
                                                 </p>
                                             </div>
-                                            <% if(currUser._id.equals(listing.owner._id)) { %>
+                                            <% if(currUser && currUser._id.equals(listing.owner._id)) { %>
                                             <form
                                                 action="/listings/<%= listing._id  %>/reviews/<%= review._id  %>?_method=DELETE"
                                                 method="post">
