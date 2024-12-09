@@ -1,5 +1,5 @@
 <% layout("/layouts/boilerplate") %>
-    <form action="/listings/<%= listing._id  %>?_method=PUT" method="post"  novalidate class="needs-validation">
+    <form action="/listings/<%= listing._id  %>?_method=PUT" method="post"  novalidate class="needs-validation" enctype="multipart/form-data">
        
     <div class="row">
         
@@ -17,15 +17,14 @@
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Cant be empty.</div>
         </div>
-        <div class="md-3">
-            <label for="image[filename]" class="form-label">image filename</label>
-            <input type="text" name="listing[image][filename]" id="" value="<%= listing.image.filename  %>" type="text" class="form-control">
-            <div class="valid-feedback">Looks good!</div>
-            <div class="invalid-feedback">Cant be empty.</div>
+        <div>
+            <label for="listing[image][url]" class="me-5">Previous image:</label>
+            <img src= "<%= originalImageUrl %>" alt="" style="border-radius: 1rem; " id="listing[image][url]">
         </div>
+        <br>
         <div class="md-3">
-            <label for="image[url]" class="form-label">image url</label>
-            <input type="text" name="listing[image][url]" id="" value="<%= listing.image.url  %>" type="text" class="form-control" required>
+            <label for="listing[image]" class="form-label">image url</label>
+            <input type="file" name="listing[image]" id="" value="<%= listing.image.url  %>" class="form-control" required>
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Cant be empty.</div>
         </div>

@@ -1,7 +1,7 @@
 <% layout("/layouts/boilerplate") %>
 <div class="row">
     <div class="col-8 offset-2">
-        <form action="/listings" method="post" novalidate class="needs-validation">
+        <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
             <br><br>
             <h3>Create a New listing</h3>
         <div>
@@ -17,16 +17,10 @@
             <div class="valid-feedback">Looks Good!</div>
             <div class="invalid-feedback">Description is needed.</div>
         </div>
-            <br>
-        <div>
-            <label for="image.filename" class="form-label">image title</label>
-            <input type="text" name="listing[image][filename]" id="" placeholder="property image/title" type="text" class="form-control">
-            <div class="valid-feedback">Can be empty</div>
-        </div>
         <br>
         <div>
-            <label for="image.url" class="form-label">image url</label>
-            <input type="text" name="listing[image][url]" id="" placeholder="property image/link" type="text" class="form-control">
+            <label for="image[image]" class="form-label">Enter the image of the place</label>
+            <input type="file" name="listing[image]" id="" placeholder="property image/link" class="form-control">
             <div class="valid-feedback">Can be empty</div>
         </div>
             <br>
